@@ -11,10 +11,12 @@ sudo bin/kafka-server-start.sh /usr/local/kafka/config/server_1.properties
 
 #### 3. list of the active brokers 
 ./bin/zookeeper-shell.sh localhost:2181 ls /brokers/ids
+
 output:   [0, 1, 2, 3]
 
 #### 4. list of the active brokers 
 ./bin/zookeeper-shell.sh localhost:2181 ls /brokers/topics
+
 output: [__consumer_offsets, greek, greek_R3]
 
 #### 5. describe kafka topics
