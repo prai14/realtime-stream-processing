@@ -25,4 +25,4 @@ output: [__consumer_offsets, greek, greek_R3]
 #### 5. describe kafka topics
 sudo bin/kafka-topics.sh --describe --zookeeper localhost:2181 
 
-sudo bin/kafka-run-class.sh kafka.admin.ConsumerGroupCommand --bootstrap-server localhost:9093 --group group_id --describe
+sudo bin/kafka-run-class.sh kafka.admin.ConsumerGroupCommand --bootstrap-server localhost:9092 --group group_id --describe
