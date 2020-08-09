@@ -28,4 +28,5 @@ sudo bin/kafka-topics.sh --describe --zookeeper localhost:2181
 sudo bin/kafka-run-class.sh kafka.admin.ConsumerGroupCommand --bootstrap-server localhost:9092 --group group_id --describe
 
 #### 6. kafka manager
-bin/cmak -Dconfig.file=cong/application.conf -Dhttp.port=8080
+sudo ./kafka-manager -Dkafka-manager.zkhosts="localhost:2181" -Dconfig.file=cong/application.conf -Dhttp.port=8080
+
