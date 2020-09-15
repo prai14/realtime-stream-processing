@@ -1,5 +1,13 @@
 # realtime-stream-processing
 
+
+#### 0. Install KAFKA
+wget http://www-us.apache.org/dist/kafka/2.4.0/kafka_2.13-2.4.0.tgz
+
+tar xzf kafka_2.13-2.4.0.tgz
+sudo mv kafka_2.13-2.4.0 /usr/local/kafka
+
+
 #### 1. Start Zookeeper
 sudo bin/zookeeper-server-start.sh config/zookeeper.properties 
 
