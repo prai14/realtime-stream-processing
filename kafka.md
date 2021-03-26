@@ -39,3 +39,26 @@ sudo bin/kafka-run-class.sh kafka.admin.ConsumerGroupCommand --bootstrap-server 
 #### 6. kafka manager
 sudo ./kafka-manager -Dkafka-manager.zkhosts="localhost:2181" -Dconfig.file=cong/application.conf -Dhttp.port=8080
 
+
+https://www.michael-noll.com/blog/2013/03/13/running-a-multi-broker-apache-kafka-cluster-on-a-single-node/
+
+# Create the "zerg.hydra" topic
+$ bin/kafka-topics.sh --zookeeper localhost:2181 \
+    --create --topic zerg.hydra --partitions 3 --replication-factor 2
+# List the available topics in the Kafka cluster
+$ bin/kafka-topics.sh --zookeeper localhost:2181 --list
+
+# List the available topics in the Kafka cluster
+$ bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic zerg.hydra
+
+# Start a console producer in sync mode
+$ bin/kafka-console-producer.sh --broker-list localhost:9092,localhost:9093,localhost:9094 --sync \
+    --topic zerg.hydra
+    
+# Start a console consumer
+$ bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic zerg.hydra --from-beginning
+
+
+
+
+
